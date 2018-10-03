@@ -1,0 +1,19 @@
+{
+    "name": "oxygencms/phrases",
+    "description": "Oxy phrases",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pavel Pavlov",
+            "email": "pavlovp@icloud.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Oxygencms\\Phrases\\": "src/",
+            "Oxygencms\\Phrases\\Database\\Seeds\\": "database/seeds/"
+        }
+    }
+}
