@@ -17,7 +17,7 @@ class PhrasePolicy extends BasePolicy
      */
     public function index(User $user)
     {
-        if ($user->can('see_phrases') || $user->can('manage_phrases')) {
+        if ($user->can('view_phrases') || $user->can('manage_phrases')) {
             return true;
         }
 
