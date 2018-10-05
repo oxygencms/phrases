@@ -1,12 +1,10 @@
 <?php
 
-namespace Oxygencms\Phrases\Database\Seeds;
-
 use Illuminate\Database\Seeder;
 use Oxygencms\Phrases\Models\Phrase;
 use Illuminate\Support\Facades\Cache;
 
-class PhrasesTableSeeder extends Seeder
+class PhraseTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

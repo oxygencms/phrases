@@ -3,7 +3,6 @@
 namespace Oxygencms\Phrases;
 
 use Illuminate\Support\ServiceProvider;
-use Oxygencms\Phrases\Services\PhraseLoader;
 
 class PhraseServiceProvider extends ServiceProvider
 {
@@ -14,21 +13,19 @@ class PhraseServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../config/translatable.php' => config_path('translatable.php'),
-        ]);
-
-        $this->loadViewsFrom(__DIR__.'/Views', 'oxygencms');
+        $this->loadViewsFrom(__DIR__.'/../views', 'oxygencms');
 
         $this->publishes([
-            __DIR__.'/Views' => resource_path('views/vendor/oxygencms'),
+            __DIR__.'/../views' => resource_path('views/vendor/oxygencms'),
         ], 'views');
-
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         $this->publishes([
             __DIR__.'/../database/migrations/' => database_path('migrations')
         ], 'migrations');
+
+        $this->publishes([
+            __DIR__.'/../database/seeds/' => database_path('seeds')
+        ], 'seeds');
     }
 
     /**
@@ -38,13 +35,8 @@ class PhraseServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->register(TranslationServiceProvider::class);
-
-        $this->mergeConfigFrom(
-            __DIR__.'/../config/translatable.php', 'translatable'
-        );
+        $this->app->register(RouteServiceProvider::class);
 
         $this->app->register(AuthServiceProvider::class);
-        $this->app->register(RouteServiceProvider::class);
     }
 }

@@ -26,7 +26,7 @@
     </div>
 </div>
 
-@foreach(config('app.locales') as $locale => $locale_name)
+@foreach(config('oxygen.locales') as $locale => $locale_name)
     <div class="row">
         <!-- text -->
         <div class="form-group col-6">

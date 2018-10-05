@@ -4,11 +4,11 @@ namespace Oxygencms\Phrases\Controllers;
 
 use JavaScript;
 use Oxygencms\Phrases\Models\Phrase;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
+use Oxygencms\Core\Controllers\Controller;
 use Oxygencms\Phrases\Requests\AdminPhraseRequest as PhraseRequest;
 
-class AdminPhraseController extends Controller
+class PhraseController extends Controller
 {
     /**
      * Display a listing of the resource.
