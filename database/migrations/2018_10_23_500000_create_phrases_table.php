@@ -17,7 +17,7 @@ class CreatePhrasesTable extends Migration
             $table->increments('id');
             $table->string('group');
             $table->string('key');
-            $table->text('text')->nullable();
+            $table->json('text')->nullable();
 
             $table->unique(['group', 'key']);
 
