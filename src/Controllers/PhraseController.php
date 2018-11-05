@@ -56,7 +56,7 @@ class PhraseController extends Controller
 
         notification("$phrase->model_name successfully created.");
 
-        return redirect()->route('phrase.index');
+        return redirect()->route('admin.phrase.index');
     }
 
     /**

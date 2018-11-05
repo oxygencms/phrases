@@ -26,6 +26,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::middleware(['web', 'admin'])
             ->prefix('admin')
+            ->name('admin.')
             ->namespace('Oxygencms\Phrases\Controllers')
             ->group(function () {
                 Route::resource('phrase', 'PhraseController', ['except' => 'show']);

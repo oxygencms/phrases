@@ -27,7 +27,7 @@ class AdminPhraseRequest extends FormRequest
 
         $rules = [
             'group' => 'required|string',
-            'key' => "required|string|unique:phrases,key,$key",
+            'key' => "required|string|unique:phrases,id," . $key,
 
             'text' => 'array|distinct',
 //            'text.*' => 'string',
