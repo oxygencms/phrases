@@ -1,4 +1,33 @@
 <div class="row">
+    <!-- group -->
+    {{--<div class="form-group col-3">--}}
+        {{--<label for="group">Group <strong>*</strong></label>--}}
+        {{--<input type="text"--}}
+               {{--class="form-control {{ $errors->has('group') ? 'is-invalid' : null }}"--}}
+               {{--id="group"--}}
+               {{--name="group"--}}
+               {{--placeholder="Enter phrase group..."--}}
+               {{--value="{{ old('group', optional($phrase)->group) ?: 'db' }}"--}}
+        {{-->--}}
+        {{--{!! $errors->first('group', '<small class="form-text text-danger">:message</small>') !!}--}}
+    {{--</div>--}}
+    <div class="form-group col-3">
+        <label for="group">Group <strong>*</strong></label>
+        <select class="form-control"
+                id="group"
+                name="group"
+        >
+            @foreach(['db', 'labels', 'links', 'headings', 'buttons'] as $group)
+                <option value="{{ $group }}"
+                        {{ $group == old('group', optional($phrase)->group) ? 'selected' : null }}
+                >
+                    {{ $group }}
+                </option>
+            @endforeach
+        </select>
+        {!! $errors->first('group', '<small class="form-text text-danger">:message</small>') !!}
+    </div>
+
     <!-- key -->
     <div class="form-group col-3">
         <label for="key">Key <strong>*</strong></label>
@@ -7,22 +36,9 @@
                id="key"
                name="key"
                placeholder="Enter phrase key..."
-               value="{{ old('key', optional($phrase)->key) }}"
+               value="{{ old('key', optional($phrase)->key)}}"
         >
         {!! $errors->first('key', '<small class="form-text text-danger">:message</small>') !!}
-    </div>
-
-    <!-- group -->
-    <div class="form-group col-3">
-        <label for="group">Group <strong>*</strong></label>
-        <input type="text"
-               class="form-control {{ $errors->has('group') ? 'is-invalid' : null }}"
-               id="group"
-               name="group"
-               placeholder="Enter phrase group..."
-               value="{{ old('group', optional($phrase)->group) ?: 'db' }}"
-        >
-        {!! $errors->first('group', '<small class="form-text text-danger">:message</small>') !!}
     </div>
 </div>
 
