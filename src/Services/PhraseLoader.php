@@ -19,16 +19,13 @@ class PhraseLoader extends FileLoader
      */
     public function load($locale, $group, $namespace = null)
     {
-
-        // TODO: not fetching from lang files if DB record is missing!!! FIX!
-
         $phrase = Cache::tags('phrases')
                        ->remember("phrases.{$locale}.{$group}", 60, function () use ($group, $locale) {
                            return Phrase::getGroup($group, $locale);
                        });
 
-        if ($phrase) return $phrase;
+        $translations = parent::load($locale, $group, $namespace);
 
-        return parent::load($locale, $group, $namespace);
+        return array_merge($translations, $phrases);
     }
 }
