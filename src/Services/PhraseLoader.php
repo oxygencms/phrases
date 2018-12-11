@@ -19,7 +19,7 @@ class PhraseLoader extends FileLoader
      */
     public function load($locale, $group, $namespace = null)
     {
-        $phrase = Cache::tags('phrases')
+        $phrases = Cache::tags('phrases')
                        ->remember("phrases.{$locale}.{$group}", 60, function () use ($group, $locale) {
                            return Phrase::getGroup($group, $locale);
                        });
