@@ -29,7 +29,7 @@ class AdminPhraseRequest extends FormRequest
 
         $rules = [
             'group' => 'required|string|in:'.$groups,
-            'key' => "required|string|unique:phrases,key,$key",
+            'key' => "required|string|unique:phrases,key,$key,id,group,$this->group",
 
             'text' => 'array|distinct',
 //            'text.*' => 'string',
