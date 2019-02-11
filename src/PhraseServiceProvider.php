@@ -26,6 +26,10 @@ class PhraseServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../database/seeds/' => database_path('seeds')
         ], 'seeds');
+
+        $this->publishes([
+            __DIR__.'/../config/phrases.php' => config_path('phrases.php'),
+        ], 'config');
     }
 
     /**
@@ -38,5 +42,7 @@ class PhraseServiceProvider extends ServiceProvider
         $this->app->register(RouteServiceProvider::class);
 
         $this->app->register(AuthServiceProvider::class);
+
+        $this->mergeConfigFrom(__DIR__.'/../config/phrases.php', 'phrases');
     }
 }

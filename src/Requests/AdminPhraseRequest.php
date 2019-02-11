@@ -25,10 +25,8 @@ class AdminPhraseRequest extends FormRequest
     {
         $key = $this->isMethod('POST') ? '' : $this->phrase->id;
 
-        $groups = "db,headings,links,labels,buttons";
-
         $rules = [
-            'group' => 'required|string|in:'.$groups,
+            'group' => 'required|string|in:' . implode(',', config('phrases.groups')),
             'key' => "required|string|unique:phrases,key,$key,id,group,$this->group",
 
             'text' => 'array|distinct',

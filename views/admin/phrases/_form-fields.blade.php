@@ -17,7 +17,7 @@
                 id="group"
                 name="group"
         >
-            @foreach(['db', 'labels', 'links', 'headings', 'buttons'] as $group)
+            @foreach(config('phrases.groups') as $group)
                 <option value="{{ $group }}"
                         {{ $group == old('group', optional($phrase)->group) ? 'selected' : null }}
                 >
