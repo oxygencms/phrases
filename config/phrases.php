@@ -20,4 +20,15 @@ return [
         'buttons'
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Load phrases into Javascript
+    |--------------------------------------------------------------------------
+    |
+    | Should the translations be loaded into the Javascript partial.
+    |
+    */
+
+    'load_to_javascript' => true,
+
 ];
