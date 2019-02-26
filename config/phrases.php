@@ -29,6 +29,6 @@ return [
     |
     */
 
-    'load_to_javascript' => true,
+    'load_to_javascript' => env('LOAD_TRANSLATIONS_TO_JS', false),
 
 ];
