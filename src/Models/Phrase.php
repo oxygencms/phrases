@@ -2,7 +2,6 @@
 
 namespace Oxygencms\Phrases\Models;
 
-use function foo\func;
 use Oxygencms\Core\Models\Model;
 use Spatie\Translatable\HasTranslations;
 
