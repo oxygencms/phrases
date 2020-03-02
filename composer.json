@@ -12,7 +12,12 @@
             "email": "mb.reppair@gmail.com"
         }
     ],
+    "require": {
+        "php": "7.0 - 7.3",
+        "oxygencms/core": "^1.0"
+    },
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Oxygencms\\Phrases\\": "src/"

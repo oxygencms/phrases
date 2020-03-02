@@ -12,7 +12,6 @@ class PhrasePolicy extends BasePolicy
 
     /**
      * @param User $user
-     *
      * @return mixed
      */
     public function index(User $user)
@@ -27,7 +26,7 @@ class PhrasePolicy extends BasePolicy
     /**
      * Determine whether the user can create phrases.
      *
-     * @param  \Oxygencms\Users\Models\User  $user
+     * @param User  $user
      * @return mixed
      */
     public function create(User $user)
@@ -42,7 +41,7 @@ class PhrasePolicy extends BasePolicy
     /**
      * Determine whether the user can update the phrase.
      *
-     * @param  \Oxygencms\Users\Models\User  $user
+     * @param User  $user
      * @return mixed
      */
     public function update(User $user)
@@ -57,7 +56,7 @@ class PhrasePolicy extends BasePolicy
     /**
      * Determine whether the user can delete the phrase.
      *
-     * @param  \Oxygencms\Users\Models\User  $user
+     * @param User  $user
      * @return mixed
      */
     public function delete(User $user)

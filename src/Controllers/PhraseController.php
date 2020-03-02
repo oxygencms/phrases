@@ -13,7 +13,7 @@ class PhraseController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function index()
@@ -28,7 +28,7 @@ class PhraseController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function create()
@@ -43,7 +43,7 @@ class PhraseController extends Controller
      *
      * @param PhraseRequest $request
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function store(PhraseRequest $request)
@@ -64,7 +64,7 @@ class PhraseController extends Controller
      *
      * @param Phrase $phrase
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function edit(Phrase $phrase)
@@ -80,7 +80,7 @@ class PhraseController extends Controller
      * @param PhraseRequest $request
      * @param Phrase $phrase
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function update(PhraseRequest $request, Phrase $phrase)
@@ -100,7 +100,7 @@ class PhraseController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Phrase $phrase
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function destroy(Phrase $phrase)
